@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}BOOK{% endblock title %}
+
+{% block content %}
+
+    {% if book %}
+        <div>
+            <p><strong>Book ID :</strong>{{ book.id }}</p>
+            <p><strong>Book Title :</strong>{{ book.title }}</p>
+            <p><strong>Book Author :</strong>{{ book.author }}</p>
+            <p><strong>Book Genre :</strong>{{ book.genre }}</p>
+            <p><strong>Publish Year:</strong>{{ book.year }}</p>
+            <p><strong>Description :</strong>{{ book.description }}</p>
+        </div>
+    {% else %}
+        <div>
+            <h1 style="color: red;">404 ! Book Not Found</h1>
+        </div>
+    {% endif %}
+
+{% endblock content %}
