@@ -16,6 +16,12 @@ def home_view(request):
     context ={
         'books':books_list,
     }
+
+    if len(books_list) == 0:
+        context = {
+        "message": f"Books containing '{query}' were not found."
+        }
+
     return render(request,'home.html',context)
 
 

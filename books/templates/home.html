@@ -1,22 +1,37 @@
 {% extends 'base.html' %}
 {% block title %}Home Page{% endblock title %}
-{%block content %}
+{% block content %}
 
 <style>
-    .HEADING{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        display: flex;
-        justify-content: center;
-        background-color: lightblue;
-    }
+  .HEADING {
+    font-family:
+      "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+  }
 </style>
-    <div class="HEADING">
-        <h1>LIBRARY MANAGEMNET SYSTEM</h1>
-    </div>
-    {% for book in books %}
-        <div>
-            <a href="{% url 'details' book.id %}">{{ book.title }}</a>
-        </div>
-    {% endfor %}
+<div class="HEADING">
+  <h1>LIBRARY MANAGEMNET SYSTEM</h1>
+</div>
 
+<div class="main-container">
+  <div class="message-conatiner">
+    {% if message %}
+
+    <p style="color: red; font-size: 30px; font-weight: bolder">
+      {{ message }}
+    </p>
+
+    {% endif %}
+  </div>
+  <div class="book-list">
+    {% for book in books %}
+    <div>
+      <a href="{% url 'details' book.id %}">{{ book.title }}</a>
+    </div>
+    {% endfor %}
+  </div>
+  <button onclick="notification()">click me</button>
+</div>
 {% endblock content %}
