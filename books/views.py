@@ -2,13 +2,25 @@ from django.shortcuts import render
 from .mock_data import BOOKS
 
 def home_view(request):
+    query = request.GET.get('search','')
+
+    books_list = list()
+
+    if query:
+        for book in BOOKS:
+            if query.lower() in book['title'].lower():
+                books_list.append(book)
+    else:
+        books_list = BOOKS
+
     context ={
-        'books':BOOKS,
+        'books':books_list,
     }
     return render(request,'home.html',context)
 
 
 def book_details_view(request, book_id):
+
     data =None
 
     for book in BOOKS:
