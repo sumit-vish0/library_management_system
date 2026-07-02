@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .mock_data import BOOKS
 
+
 def home_view(request):
     query = request.GET.get('search','')
 
@@ -23,6 +24,12 @@ def home_view(request):
         }
 
     return render(request,'home.html',context)
+
+def all_books_view(request):
+    context = {
+        'books': BOOKS
+    }
+    return render(request, 'all_books.html', context)
 
 
 def book_details_view(request, book_id):

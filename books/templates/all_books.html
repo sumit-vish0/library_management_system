@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %} {% block title %}All Library Books{% endblock title %}
+{% block content %}
+
+<div class="HEADING">
+  <h1>ALL AVAILABLE BOOKS</h1>
+</div>
+
+<div class="main-container" style="padding: 20px; max-width: 1200px; margin: 0 auto;">
+  
+  <div style="margin-bottom: 20px;" class="Explore">
+    <a href="{% url 'home' %}" >
+      ← Back to Home Page
+    </a>
+  </div>
+
+  <div class="book-grid">
+    {% for book in books %}
+    <a href="{% url 'details' book.id %}" class="book-card">
+      <img src="{% static 'image/book_' %}{{ book.id }}.jpg" alt="{{ book.title }}">
+      <div class="book-title">{{ book.title }}</div>
+    </a>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% endblock content %}
