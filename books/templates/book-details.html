@@ -14,8 +14,11 @@
             <p><strong>Description :</strong>{{ book.description }}</p>
         </div>
     {% else %}
-        <div>
-            <h1 style="color: red;">404 ! Book Not Found</h1>
+        <div class="not-found">
+            <h1>404 !</h1>
+            <br>
+            <p>Book Not Found</p>
+            <a href="{% url 'home' %}"> <--Back To Home</a>
         </div>
     {% endif %}
 
