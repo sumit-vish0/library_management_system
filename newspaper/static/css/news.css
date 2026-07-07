@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rowdies:wght@300;400;700&display=swap');
+
+/* Main Body Background (The off-white paper color) */
+.news-body {
+    background-color: #fbf9f4;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #111;
+    padding: 20px;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fbf9f4;
+}
+
+/* Header Elements */
+.newspaper-header {
+    text-align: center;
+    border-bottom: 4px double #111;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.newspaper-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 10px 0;
+}
+
+/* The 3-Column Newspaper Grid Layout */
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Left, Middle (Main Story), Right */
+    gap: 20px;
+}
+
+/* Column Borders to match print style */
+.left-col {
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+}
+
+.main-col {
+    padding: 0 15px;
+}
+
+.right-col {
+    border-left: 1px solid #ddd;
+    padding-left: 15px;
+}
+
+/* Card Styling */
+.news-story {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.news-story:last-child {
+    border-bottom: none;
+}
+
+.story-link {
+    color: #111;
+    text-decoration: none;
+}
+
+.story-link:hover h3, .story-link:hover h2 {
+    text-decoration: underline;
+}
+
+/* Typography Hierarchy */
+.main-story h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.side-story h3 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.story-desc {
+    font-family: Arial, sans-serif; /* Clean sans-serif for body text just like the image */
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.story-meta {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Trending List numbers */
+.trending-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.trending-num {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #bbb;
+    font-family: Arial, sans-serif;
+}

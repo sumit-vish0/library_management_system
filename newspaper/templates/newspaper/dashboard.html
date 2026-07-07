@@ -1,0 +1,88 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}News Factory Dashboard{% endblock title %} 
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+<div class="news-body">
+    <div class="news-container">
+        
+        <!-- Header Section -->
+        <header class="newspaper-header">
+            <h1 class="newspaper-title">News Factory</h1>
+            <div style="display: flex; justify-content: space-between; font-family: Arial; font-size: 0.8rem; text-transform: uppercase; border-top: 1px solid #111; padding-top: 5px;">
+                <span>EN | IN</span>
+                <span>{% now "l, F d, Y" %}</span>
+                <span>Live Feed Dashboard</span>
+            </div>
+        </header>
+
+        <!-- Main Grid Area -->
+        <div class="newspaper-grid">
+            
+            <!-- 1. LEFT COLUMN -->
+            <aside class="left-col">
+                {% for news in news_list|slice:":2" %}
+                <article class="news-story side-story">
+                    <a href="{{ news.url }}" target="_blank" class="story-link">
+                        <h3>{{ news.title }}</h3>
+                    </a>
+                    <p class="story-desc">{{ news.description|default:""|truncatechars:120 }}</p>
+                    <div class="story-meta">Source: {{ news.source.name }}</div>
+                </article>
+                {% endfor %}
+            </aside>
+
+            <!-- 2. CENTER COLUMN (Main Headline Focus) -->
+            <main class="main-col">
+                {% for news in news_list|slice:"2:3" %}
+                <article class="news-story main-story" style="border-bottom: 2px solid #111;">
+                    <!-- NewsAPI images work great here if available -->
+                    {% if news.urlToImage %}
+                        <img src="{{ news.urlToImage }}" alt="headline" style="width: 100%; height: auto; border-radius: 4px; filter: grayscale(20%);">
+                    {% endif %}
+                    <a href="{{ news.url }}" target="_blank" class="story-link">
+                        <h2>{{ news.title }}</h2>
+                    </a>
+                    <p class="story-desc" style="font-size: 1rem;">{{ news.description }}</p>
+                    <div class="story-meta">Source: {{ news.source.name }}</div>
+                </article>
+                {% endfor %}
+
+                <!-- Minor center stack items -->
+                {% for news in news_list|slice:"3:5" %}
+                <article class="news-story side-story" style="display: flex; gap: 15px; align-items: center; margin-top: 15px;">
+                    <div style="flex: 2;">
+                        <a href="{{ news.url }}" target="_blank" class="story-link">
+                            <h3 style="font-size: 1.1rem;">{{ news.title }}</h3>
+                        </a>
+                        <div class="story-meta">Source: {{ news.source.name }}</div>
+                    </div>
+                </article>
+                {% endfor %}
+            </main>
+
+            <!-- 3. RIGHT COLUMN (Trending Headlines Feed) -->
+            <aside class="right-col">
+                <h4 style="font-family: Arial; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; border-bottom: 1px solid #111; padding-bottom: 5px; margin-bottom: 15px;">Trending Topics</h4>
+                
+                {% for news in news_list|slice:"5:10" %}
+                <div class="trending-item">
+                    <span class="trending-num">#{{ forloop.counter }}</span>
+                    <div>
+                        <a href="{{ news.url }}" target="_blank" class="story-link" style="font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 4px;">
+                            {{ news.title|truncatechars:80 }}
+                        </a>
+                        <div class="story-meta" style="font-size: 0.7rem;">{{ news.source.name }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </aside>
+
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{% static 'newspaper/css/news.css' %}">
+{% endblock content %}

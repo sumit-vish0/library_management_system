@@ -3,11 +3,10 @@
 {% block title %}Home Page{% endblock title %} {% block content %}
 
 <div class="HEADING">
-  <h1>LIBRARY MANAGEMENT SYSTEM</h1>
+  <h1>E-LIBRARY</h1>
 </div>
 
 <div class="main-container">
-  <h1>Featured Books</h1>
   {% if message %}
   <div class="message-container">
     <p
@@ -22,7 +21,6 @@
     </p>
   </div>
   {% endif %}
-
   <div class="book-grid">
     {% for book in books %}
     <a

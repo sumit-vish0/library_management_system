@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: beige;
+    background-color: #fbf9f4;
     gap: 30px;
 }
 
@@ -15,10 +15,9 @@
     display: inline-block;
     text-decoration: none;
     border: none;
-    border-radius: 20px;
     padding: 10px 20px;
     color: white;
-    background-color: red;
+    background-color: black;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
@@ -31,9 +30,9 @@
 .HEADING {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     text-align: center;
-    background-color: lightblue;
+    background-color: #fbf9f4;
+    border-bottom: 1px solid black;
     padding: 10px 0;
-    margin-bottom: 30px;
 }
 
 .book-grid {

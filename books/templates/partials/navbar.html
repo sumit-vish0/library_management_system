@@ -1,6 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Library & E-learning</a>
+<nav class="navbar navbar-expand-lg" style="background-color: #fbf9f4; border-bottom: 1px solid #111; font-family: Arial, sans-serif;">
+  <div class="container-fluid" style="max-width: 1200px;">
+    <!-- Elegant Serif Brand Heading -->
+    <a class="navbar-brand" href="{% url 'home' %}" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 900; letter-spacing: -0.5px; color: #111;">
+      🏛️ Library & E-learning
+    </a>
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -9,30 +13,42 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      style="border-color: #111;"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-transform: uppercase; font-size: 0.8rem; font-weight: bold; letter-spacing: 0.5px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          <a class="nav-link text-dark" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
+          <a class="nav-link text-dark" href="{% url 'about' %}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          <a class="nav-link text-dark" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="{% url 'daily_newspaper' %}" style="border-left: 1px solid #ccc; padding-left: 15px; margin-left: 5px;">
+            📰 Global News
+          </a>
         </li>
       </ul>
+
+      <!-- Minimalistic Vintage Search Field -->
       <form class="d-flex" role="search">
         <input
           class="form-control me-2"
           type="search"
           name="search"
-          placeholder="Search"
+          placeholder="What are you looking for?"
           aria-label="Search"
+          style="border: 1px solid #111; background-color: #fbf9f4; border-radius: 0px; font-size: 0.85rem;"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-dark" type="submit" style="border-radius: 0px; font-size: 0.85rem; text-transform: uppercase; font-weight: bold;">
+          Search
+        </button>
       </form>
     </div>
   </div>
