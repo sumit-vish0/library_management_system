@@ -1,0 +1,114 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbf9f4;
+    gap: 30px;
+}
+
+.main-container h1{
+    margin-top: 20px;
+}
+
+.Explore a{
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+}
+
+.hidden-book {
+    display: none !important;
+}
+
+.HEADING {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    text-align: center;
+    background-color: #fbf9f4;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #f5f5f5;
+}
+
+.book-title {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.not-found{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    height: 90vh;
+    border: 2px solid red;
+}
+.not-found h1 {
+    color: orange;
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.not-found p {
+    color: orange;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.not-found a{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.not-found a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}

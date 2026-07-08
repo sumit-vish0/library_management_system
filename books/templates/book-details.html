@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}BOOK{% endblock title %}
+    
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/Book.css' %}" /> 
+{% endblock extra_css %}
 
 {% block content %}
 

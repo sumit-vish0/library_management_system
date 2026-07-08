@@ -1,6 +1,11 @@
 {% extends 'base.html' %} {% load static %}
 
-{% block title %}Home Page{% endblock title %} {% block content %}
+{% block extra_css %} 
+<link rel="stylesheet" href="{% static 'css/book.css' %}">
+{% endblock extra_css %}
+
+{% block title %}Home Page{% endblock title %} 
+{% block content %}
 
 <div class="HEADING">
   <h1>E-LIBRARY</h1>
